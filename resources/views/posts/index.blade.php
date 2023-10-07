@@ -79,6 +79,9 @@
                                     <th scope="col" class="px-6 py-3">
                                         Fecha
                                     </th>
+                                    <th scope="col" class="px-6 py-3">
+                                        Accion
+                                    </th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -88,7 +91,7 @@
                                 @endphp
                                     <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                                         <td scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                            <img src="{{ $row['image_url'] }}" alt="Imagen">
+                                            <img class="max-w-xs h-auto" src="{{ $row['image_url'] }}" alt="Imagen">
                                         </td>
                                         <td class="px-6 py-4">
                                             {{ $row['title'] }}
@@ -98,6 +101,9 @@
                                         </td>
                                         <td class="px-6 py-4">
                                             {{ $row['created_at'] }}
+                                        </td>
+                                        <td class="px-6 py-4">
+                                                <a href="{{route('posts.destroy', ['id'=>$row['id']])}}" class="ml-auto text-sm font-medium text-red-600 hover:underline dark:text-blue-500">Eliminar</a>
                                         </td>
                                     </tr>
                                 @php
